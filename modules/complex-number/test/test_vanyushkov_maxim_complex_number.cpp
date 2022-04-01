@@ -47,14 +47,6 @@ TEST(Vanyushkov_Maxim_ComplexNumberTest, Can_Copy_Correct) {
     ASSERT_DOUBLE_EQ(z1.getIm(), z.getIm());
 }
 
-TEST(Vanyushkov_Maxim_ComplexNumberTest, Can_Copy_With_Assignment_Operator) {
-    double re = 1.5, im = 2.75;
-
-    ComplexNumber z(re, im);
-
-    ASSERT_NO_THROW(ComplexNumber z1 = z);
-}
-
 TEST(Vanyushkov_Maxim_ComplexNumberTest,
     Can_Copy_With_Assignment_Operator_Correct) {
     double re = 1.5, im = 2.75;
