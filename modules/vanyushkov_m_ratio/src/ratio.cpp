@@ -116,5 +116,19 @@ int Ratio::get_denominator() const {
 }
 
 void Ratio::set_ratio(int _numerator, int _denominator) {
-    *this = Ratio(_numerator, _denominator);
+    if (_denominator == 0) {
+        throw "Error! Division by ZERO";
+    }
+    if (_denominator < 0 && _numerator) {
+        _numerator = -_numerator;
+        _denominator = -_denominator;
+    }
+    if (_numerator == 0 || _denominator == 1) {
+        numerator = _numerator;
+        denominator = 1;
+    } else {
+        int divider = gcd(std::abs(_numerator), _denominator);
+        numerator = _numerator / divider;
+        denominator = _denominator / divider;
+    }
 }
