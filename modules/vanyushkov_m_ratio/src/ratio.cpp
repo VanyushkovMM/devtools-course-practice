@@ -5,9 +5,8 @@
 #include "include/ratio.h"
 
 int Ratio::gcd(int a, int b) const {
-    int c;
     while (b) {
-        c = a % b;
+        int c = a % b;
         a = b;
         b = c;
     }
